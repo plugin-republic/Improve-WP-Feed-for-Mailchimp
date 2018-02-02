@@ -29,10 +29,6 @@ function atp_filter_content_feed( $excerpt ) {
 	$excerpt = atp_get_content_to_more_tag();
 	if( has_post_thumbnail( $post->ID ) ) {
 		$excerpt = get_the_post_thumbnail( array( 'style' => 'max-width: 600px; width: 100%; height: auto; margin: 30px 0;' ) ) . $excerpt;
-	} else if( function_exists( 'showcase_get_background_image_src' ) && showcase_get_background_image_src() ) {
-		$url = showcase_get_background_image_src();
-		$image = '<img src="' . esc_url( $url ) . '" style="max-width: 600px; width: 100%; height: auto; margin: 30px 0;">';
-		$excerpt = $image . $excerpt;
 	}
 	return $excerpt;
 }
